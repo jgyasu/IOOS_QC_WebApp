@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOOS QC Web Application</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="img/IOOS_logo.png" alt="IOOS Logo" class="logo" />
+    </div>
+  </header>
+
+  <section id="full-image-section">
+    <img src="img/ocean.jpg" alt="Oceanic Theme" />
+    <div class="text-overlay">IOOS Quality Control Tests in the Browser</div>
+  </section>
+
+  <div id="app">
+    <h2>Run Quality Control Tests</h2>
+    <div class="input-section">
+      <label for="file-input">Upload your dataset (CSV format)</label>
+      <input type="file" id="file-input" accept=".csv" />
+    </div>
+    
+    <div class="input-section">
+      <label for="data-checks">Select Quality Control Test</label>
+      <select id="data-checks">
+        <option value="gross_range">Gross Range Test</option>
+        <option value="flat_line">Flat Line Test</option>
+        <option value="rate_of_change">Rate of Change Test</option>
+        <option value="spike_test">Spike Test</option>
+      </select>
+    </div>
+
+    <button id="run-checks">Run Quality Control Test</button>
+    
+    <div id="output">
+      results will appear here after running the test
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
